@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: redis-cluster
+  # namespace: argocd
+  labels:
+    release_name: temp
+  annotations:
+#    argocd.argoproj.io/hook: Skip
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: redis
+    server: https://kubernetes.default.svc
+  project: dish
+  source:
+    path: helm/redis-cluster
+    repoURL: https://github.com/sanster23/charts.git
+    # targetRevision: 
+    # helm:
+    #   values:
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true
