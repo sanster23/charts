@@ -18,8 +18,14 @@ spec:
     path: helm/redis-cluster
     repoURL: https://github.com/sanster23/charts.git
     # targetRevision: 
-    # helm:
-    #   values:
+    helm:
+      values: |
+        cluster:
+          nodes: 3
+        persistence:
+          enabled: false
+        metrics:
+          enabled: true
   syncPolicy:
     automated: {}
     syncOptions:

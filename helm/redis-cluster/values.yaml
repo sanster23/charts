@@ -54,7 +54,7 @@ cluster:
   ##
   ## The number of master nodes should always be >= 3, otherwise cluster creation will fail
   ##
-  nodes: 4
+  nodes: 3
   ## Parameter to be passed as --cluster-replicas to the redis-cli --cluster create
   ## 1 means that we want a replica for every master created
   ##
@@ -567,7 +567,7 @@ service:
 ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
 ##
 persistence:
-  enabled: true
+  enabled: false
   ## The path the volume will be mounted at, useful when using different
   ## Redis(TM) images.
   ##
