@@ -1,2 +1,2 @@
 # charts
-helm and argo manifests: poc
+helm and argo manifests
